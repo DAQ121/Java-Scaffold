@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasource.initialSize",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.initialSize."
+    },
+    {
+      "name": "spring.datasource.minIdle",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.minIdle."
+    },
+    {
+      "name": "spring.datasource.poolPreparedStatements",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.poolPreparedStatements."
+    },
+    {
+      "name": "spring.datasource.maxActive",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.maxActive."
+    }
+  ] }

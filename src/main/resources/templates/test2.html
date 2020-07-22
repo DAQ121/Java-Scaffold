@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>狂神说</title>
+</head>
+<body>
+<h1>测试页面</h1>
+
+<!--/*@thymesVar id="msg" type="ch"*/-->
+<div th:text="${msg}"></div>
+<!--不转义-->
+<div th:utext="${msg}"></div>
+
+<!--遍历数据-->
+<!--th:each每次遍历都会生成当前这个标签：官网#9-->
+<h4 th:each="user :${users}" th:text="${user}"></h4>
+
+<h4>
+    <!--行内写法：官网#12-->
+    <span th:each="user:${users}">[[${user}]]</span>
+</h4>
+
+</body>
+</html>

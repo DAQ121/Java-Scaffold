@@ -1,0 +1,4 @@
+#指定开发模式还是部署模式 dev / prod
+spring:
+  profiles:
+    active: dev

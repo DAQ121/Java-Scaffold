@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="#"/>
+</head>
+
+<body>
+    <h1>首页</h1>
+    <div th:if="${session.account != null}">
+        <span th:text="${session.account.username}+'欢迎回来！'"></span>
+        <a href="/logout"><input type="submit" value="退出登录"></a>
+    </div>
+    <a href="/main">游客</a><br/>
+    <div shiro:haspermission="manage">
+        <a href="/manage">个人中心</a><br/>
+    </div>
+    <div shiro:hasrole="administrator">
+        <a href="administrator">会员中心</a>
+    </div>
+
+</body>
+</html>

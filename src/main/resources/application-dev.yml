@@ -1,0 +1,71 @@
+# dev：线下调试环境
+debug: true
+spring:
+  # 数据源配置
+  datasource:
+    username: root
+    password: daq
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource # 自定义数据源
+    #Spring Boot 默认是不注入这些属性值的，需要自己绑定
+    #druid 数据源专有配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #配置监控统计拦截的filters，stat:监控统计、log4j：日志记录、wall：防御sql注入
+    #如果允许时报错  java.lang.ClassNotFoundException: org.apache.log4j.Priority
+    #则导入 log4j 依赖即可，Maven 地址：https://mvnrepository.com/artifact/log4j/log4j
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  #配置redis的主机号与端口，如果redis开在linux服务器上，就要打开响应的端口
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+  #热部署配置：修改项目之后无需重新启动，它会自动重新编译
+  devtools:
+    restart:
+      enabled: true  #\u8BBE\u7F6E\u5F00\u542F\u70ED\u90E8\u7F72
+
+  #关闭模版缓存
+  freemarker:
+    cache: false
+
+  #配置视图解析器，供shiro使用
+  thymeleaf:
+    prefix: classpath:/templates/shiro/
+    suffix: .html
+
+  # 邮件服务相关配置
+  mail:
+    username: 2829025551@qq.com #邮箱名称
+    password: kbsigggbndygddae #开通QQ邮箱的POP3/SMTP服务后,获取到邮箱秘钥
+    host: smtp.qq.com
+    default-encoding: utf-8
+    port: 25
+    # 开启加密验证
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+# mybatis-plus的相关配置
+mybatis-plus:
+  configuration:
+    # 将sql语句打印出来，并且查询结果也打印在控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
