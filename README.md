@@ -1,5 +1,5 @@
 # :floppy_disk:序言
-- 项目的基础框架：后端是`SpringBoot`，前端是`layui`
+- 项目的基础框架：后端是`SpringBoot`，前端是`layui`，恳求各位大佬一个`star`和`fork`吧！也希望收到指点，与帮助:heart_eyes:！！
 - 目前集成了如下组件（完善中~）：
 1. `MybatisPlus`：根据表，自动生成代码，简单的sql语句不用写。
 1. `Druid`数据源：安全可靠，还有可视化界面。
