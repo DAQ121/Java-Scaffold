@@ -154,6 +154,13 @@
 			<version>2.0.0</version>
 		</dependency>
 
+		<!--google 提供的二维码依赖-->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
     </dependencies>
 
 	<build>
