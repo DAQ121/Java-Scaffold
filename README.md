@@ -9,7 +9,7 @@
 5. `Async`异步任务
 6. `mail`邮件任务
 7. `Scheduling`定时任务
-
+8. 生成二维码功能
 
 # :bookmark_tabs:项目结构
 
@@ -39,6 +39,9 @@ com
             │
             └─utils  #工具类
                     SendMailUtil.java #发送邮件的工具类
+                    BufferedImageLuminanceSource #二维码工具类1
+                    QRCodeUtil #二维码工具类2
+                    
 ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200722161439539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDg2MTM5OQ==,size_16,color_FFFFFF,t_70)
@@ -76,6 +79,8 @@ com
 18. 在`yml`配置文件中加入 `用户名`，`邮箱秘钥`，服务器地址（有默认值） 以及加密的配置。
 19. 将方法封装在工具类中，使用的时候调用相应的方法，写入消息和发送方。
 
+- :pouting_cat: **生成二维码功能**
+20. 调用`QRCodeUtil`的`shengcheng`方法，输入相应的参数，如：二维码内容，嵌入图片的路径，生成图片的路径。即可在相应目录下得到二维码。
 
 # :telephone:联系我
 - 如果有想要加入的童鞋，我们可以一起把这个脚手架做得更好，方便以后开发，提出你想要集成或者你觉得有意思的组件吧。欢迎Q我`2829025551`。
