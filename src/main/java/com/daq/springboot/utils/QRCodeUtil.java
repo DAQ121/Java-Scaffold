@@ -36,6 +36,7 @@ public class QRCodeUtil {
     public static void shengcheng(String text,String destPath) throws Exception {
         // text: 存放在二维码中的内容,二维码中的内容可以是文字，可以是链接等
         // destPath: 生成的二维码的路径及名称
+        // 如：G：\\LogFile\\daq.jpg
 
         //生成二维码
         QRCodeUtil.encode(text, null, destPath, true);
