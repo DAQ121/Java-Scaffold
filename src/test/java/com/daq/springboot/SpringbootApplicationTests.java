@@ -1,13 +1,12 @@
 package com.daq.springboot;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.daq.springboot.utils.MailUtil;
+import com.daq.springboot.utils.QRCodeUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -18,7 +17,7 @@ import java.sql.SQLException;
 class SpringbootApplicationTests {
 
 	@Autowired
-	private JavaMailSenderImpl mailSender;
+	MailUtil mailUtil;
 
 	@Autowired
 	DataSource dataSource;
@@ -54,17 +53,11 @@ class SpringbootApplicationTests {
 
 	@Test
 	void testMail(){
-		//一个简单的邮件
-		SimpleMailMessage mailMessage = new SimpleMailMessage();
-
-		mailMessage.setSubject("你好~");
-		mailMessage.setText("桐宝桐宝,欢迎使用脚手架!!https://daqwt.top");
-
-		mailMessage.setTo("1018505421@qq.com");
-		mailMessage.setFrom("2829025551@qq.com");
-
-		mailSender.send(mailMessage);
+		String[] to = {"2829025551@qq.com"};
+		mailUtil.sendHtmlMail("dierci","taihaole",to);
 	}
-
-
+	@Test
+	void testQr() throws Exception {
+		QRCodeUtil.shengcheng("nihoa","G:\\LogFile\\daq121.jpg");
+	}
 }

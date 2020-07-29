@@ -11,8 +11,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @MapperScan("com.daq.Springboot.demo.mapper")
 public class SpringbootApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootApplication.class, args);
-	}
+	public static void main(String[] args) throws Exception { SpringApplication.run(SpringbootApplication.class, args); }
 
 }

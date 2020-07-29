@@ -1,17 +1,16 @@
 package com.daq.springboot.demo.controller;
 
 import com.daq.springboot.demo.pojo.Account;
+import com.daq.springboot.utils.MailUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -21,6 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class AccountController {
+
+    @Autowired
+    private MailUtil mailUtil;
 
     @GetMapping("/{url}")
     public String redirect(@PathVariable("url") String url){
@@ -66,4 +68,10 @@ public class AccountController {
         return "login";
     }
 
+    @GetMapping("/sendMail")
+    public String sendMail(){
+        String[] to = {"2829025551@qq.com"};
+        mailUtil.sendHtmlMail("你好","haha",to);
+        return "successful";
+    }
 }
