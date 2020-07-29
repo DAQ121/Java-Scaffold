@@ -41,6 +41,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
 		<!--运行环境-热部署-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -140,11 +144,20 @@
 			<artifactId>spring-boot-starter-log4j</artifactId>
 			<version>1.3.8.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
 
 		<!--shiro-->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-spring</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
 			<version>1.4.2</version>
 		</dependency>
 		<!--thymeleaf整合shiro-->
