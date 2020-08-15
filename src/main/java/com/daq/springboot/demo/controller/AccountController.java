@@ -65,7 +65,7 @@ public class AccountController {
     public String logout(){
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
-        return "login";
+        return "login2";
     }
 
     @GetMapping("/sendMail")
