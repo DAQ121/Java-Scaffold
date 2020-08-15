@@ -4,7 +4,7 @@ spring:
   # 数据源配置
   datasource:
     username: root
-    password: daq
+    password: 123456
     url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource # 自定义数据源
@@ -53,9 +53,9 @@ spring:
     host: smtp.qq.com
     port: 25
     protocol: smtp
-    username: 2829025551@qq.com #邮箱名称
-    password: kbsigggbndygddae #开通QQ邮箱的POP3/SMTP服务后,获取到邮箱秘钥
-    nickname: 代澳旗
+    username: **********@qq.com #邮箱名称
+    password: **************** #开通QQ邮箱的POP3/SMTP服务后,获取到邮箱秘钥
+    nickname: *** #发件人昵称
     default-encoding: utf-8
 
     # 开启加密验证
